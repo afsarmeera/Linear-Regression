@@ -1,0 +1,7 @@
+diseasesev<-c(1.9,3.1,3.3,4.8,5.3,6.1,6.4,7.6,9.8,12.4)
+temperature<-c(2,1,5,5,20,20,23,10,30,25)
+plot(temperature,diseasesev)
+severity <- as.data.frame(cbind(diseasesev,temperature))
+severity.lm <- lm(diseasesev~temperature,data=severity)
+summary(severity.lm)
+plot(severity.lm,which=2)
